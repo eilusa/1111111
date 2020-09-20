@@ -1,0 +1,112 @@
+using System;
+public abstract class Figure
+{   
+	public abstract double Area
+	{
+		get;
+	}
+}
+
+//三角形
+class Tiangle : Figure
+{
+	public double hemline;
+	public double height;
+	
+
+	public void setHemline(double a)
+	{
+		hemline = a;
+	}
+
+	public void setHeight(double b)
+	{
+		height = b;
+	}
+	public override double Area
+	{
+		get
+		{
+			return hemline * height * 0.5;
+		}
+	}
+	public bool is_Tiangle()
+	{
+		if (hemline > 0 && height > 0)
+		{
+			return true;
+		}
+		else { return false; }
+		
+	}
+}
+
+//正方形
+	class Square:Figure
+{
+	public double side;
+	public void setSide(double a)
+	{
+		side = a;
+	}
+	public override double Area
+	{
+		get
+		{
+			return side*side;
+		}
+	}
+	public bool is_Square()
+	{
+		if (side > 0)
+		{
+			return true;
+		}
+		else { return false; }
+	}
+}
+
+//长方形
+	class Rectangcle : Figure
+	{
+		public double length;
+		public double width;
+
+		public void setLength(double a)
+		{
+			length = a;
+		}
+
+		public void setWidth(double b)
+		{
+			width = b;
+		}
+		public override double Area
+		{
+			get
+			{
+				return length * width;
+			}
+		}
+		public bool is_Rectangcle()
+		{
+			if (length > 0 && width > 0)
+			{
+				return true;
+			}
+			else { return false; }
+		}
+	}
+ class work1 {
+  public static void Main()
+	{
+		Tiangle T = new Tiangle();
+		T.setHeight(5);
+		T.setHemline(5.0);
+		Console.WriteLine("The area of this tiangle is"+ T.Area);
+		
+		Console.WriteLine("This is a tiangle"+T.is_Tiangle());
+		Console.ReadLine();
+	}
+}
+	
